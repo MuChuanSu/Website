@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深夜食堂一頁式網站</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+
+
+    <!-- bootstrap css CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <!-- Jquery CDN-->
+    <script
+     src="https://code.jquery.com/jquery-3.7.1.js"
+     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+     crossorigin="anonymous">
+    </script>
+
+    
+     <!-- bootstrap CDN js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   
+
+</head>
+<body>
+   
+   
+
+    <!-- 置中Navbar 有錨點功能 背景色為bg-light-->
+    <div class="container">
+        <ul class = "nav justify-content-center bg-light">
+            <li class = nav-item>
+                <a class = "nav-link" href="#">News</a>
+            </li>
+            <li class = nav-item>
+                <a class = "nav-link" href="#introAnchor">介紹</a>
+            </li>
+            <li class = nav-item>
+                <a class = "nav-link" href="#menuTitle">菜單</a>
+            </li>
+            <li class = nav-item>
+                <a class = "nav-link" href="#">聯絡我們</a>
+            </li>
+        </ul>
+    </div>
+    <!-- Alert通知 加入alert-dissmissible fade show與button元件讓通知可被關閉漸出 -->
+    <div class="alert alert-info alert-dissmissible fade show" >
+        <strong>2024/02/30 限當日買一送一優惠，詳情請洽店面人員</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- 輪轉圖片Carousel,data-bs-theme ="dark"讓箭頭變成黑色,在每個carousel item加上data-bs-interval="2000"來自動輪播-->
+    <!-- 注意如果鼠標停在圖片上則會停止輪播 -->
+
+    <div id="carouselExampleInterval" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-theme ="dark" >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img src="pics/ramen.jpg" class="d-block w-100" alt="ramen.jpg">
+          </div>
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="pics/soup.jpg" class="d-block w-100" alt="soup.jpg">
+          </div>
+          <div class="carousel-item">
+            <img src="pics/sushi.jpg" class="d-block w-100" alt="sushi.jpg">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <br>
+    <br>
+    
+    <!--  本店介紹 -->
+
+    <div class="container" id="introAnchor">
+        <div class="bg-transparent border rounded-2">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="pics/chef.jpg" id ="chefPic" class="rounded-4" width="70%"  alt="chef">
+
+                </div>
+                <div class="col-sm-6">
+                    <h1 class="display-4" id="introTitle">本店介紹</h1>
+                    <p class="lead" id="introSubtitle">經營理念</p>
+                    <p id="introduction">深夜食堂是為了疲憊的人們開設的餐車<br>
+                    無論您是為了什麼理由而夜遊<br>
+                    只要您有緣造訪<br>
+                    我們都會為您提供各地美食溫暖您的胃與心靈<br>
+                    菜單每周更新<br>
+                    請隨時上官網關注!
+                    </p>
+                </div>
+            <div>
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- 本店菜單 用panels展示菜品-->
+    <div id="menuTitle">
+        <h1>本周主打菜單</h1>
+    </div>
+    
+    <div class="container" id="menu">
+        <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1565299715199-866c917206bb?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <h3>炭烤牛排</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://plus.unsplash.com/premium_photo-1683657860968-7474e7ea2d80?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <h3>各式炸物</h3>
+        
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1529690678884-189e81f34ef6?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <h3>鮮蔬牛肉麵</h3>
+        
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1588166524938-1ee110d7dcef?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <h3>宇都宮餃子</h3>
+        
+        </div>
+        <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1549396563-92fab230895a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+            <h3>法式洋蔥湯(限量)</h3>
+        
+        </div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    <!-- 聯絡方式 -->
+
+    <footer>
+
+    </footer>
+    <!-- script 要放在最後! -->
+    <script src="script.js"></script>
+</body>
+</html>

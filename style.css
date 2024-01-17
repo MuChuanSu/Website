@@ -1,0 +1,74 @@
+.carousel-inner > .carousel-item >img {
+    height: 640px;
+    width: auto;
+   
+    background-position: center;
+}
+
+#introduction,#introTitle,#introSubtitle{
+    margin-top: 80px;
+    text-align: center;
+    
+    
+
+}
+#chefPic{
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-bottom: 10px;
+}
+#menuTitle{
+    text-align: center;
+    margin: 30px;
+}
+#menu{
+    display:flex;
+    width: 90vw;
+    
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.panel{
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all 700ms ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+  
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+  }

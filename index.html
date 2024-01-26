@@ -32,9 +32,10 @@
 
     <!-- 置中Navbar 有錨點功能 背景色為bg-light-->
     <div class="container">
-        <ul class = "nav justify-content-center bg-light">
+        <ul class = "navbar navbar-expand-lg navbar-dark bg-dark" id="nav">
+            <a class="navbar-brand mb-0 h1" href="#">深夜食堂</a>
             <li class = nav-item>
-                <a class = "nav-link" href="#">News</a>
+                <a class = "nav-link" href="#alert">News</a>
             </li>
             <li class = nav-item>
                 <a class = "nav-link" href="#introAnchor">介紹</a>
@@ -43,12 +44,12 @@
                 <a class = "nav-link" href="#menuTitle">菜單</a>
             </li>
             <li class = nav-item>
-                <a class = "nav-link" href="#">聯絡我們</a>
+                <a class = "nav-link" href="#footer">聯絡我們</a>
             </li>
         </ul>
     </div>
     <!-- Alert通知 加入alert-dissmissible fade show與button元件讓通知可被關閉漸出 -->
-    <div class="alert alert-info alert-dissmissible fade show" >
+    <div class="alert alert-info alert-dissmissible fade show" id="alert" >
         <strong>2024/02/30 限當日買一送一優惠，詳情請洽店面人員</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -93,10 +94,10 @@
                     <h1 class="display-4" id="introTitle">本店介紹</h1>
                     <p class="lead" id="introSubtitle">經營理念</p>
                     <p id="introduction">深夜食堂是為了疲憊的人們開設的餐車<br>
-                    無論您是為了什麼理由而夜遊<br>
+                    無論是為了什麼理由而夜遊<br>
                     只要您有緣造訪<br>
                     我們都會為您提供各地美食溫暖您的胃與心靈<br>
-                    菜單每周更新<br>
+                    菜單每週更新<br>
                     請隨時上官網關注!
                     </p>
                 </div>
@@ -105,10 +106,11 @@
             </div>
         </div>
     </div>
+    <br>
 
     <!-- 本店菜單 用panels展示菜品-->
     <div id="menuTitle">
-        <h1>本周主打菜單</h1>
+        <h1>本週主打菜單</h1>
     </div>
     
     <div class="container" id="menu">
@@ -129,11 +131,58 @@
         </div>
         <div class="panel" style="background-image: url('https://images.unsplash.com/photo-1549396563-92fab230895a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
             <h3>法式洋蔥湯(限量)</h3>
-        
         </div>
-        
+    </div>
+    <!-- Google地圖資訊 -->
+    <div class="mapPanel">
         
     </div>
+    <h2>店面位置(點擊圖示獲取資訊)</h2>
+    <div class = "center", id ="eaterymap"></div>
+    
+    <script>
+        function initMap(){
+            let options = {
+                zoom:14,
+                center:{lat:25.050667,lng:121.501869}
+            }
+            let map = new google.maps.Map(document.getElementById('eaterymap'),options);
+
+            let marker = new google.maps.Marker({
+                position:{lat:25.050667,lng:121.501869},
+                map:map,
+                icon:'pics/ramenIcon.png'
+            });
+
+            let info='<h3>店鋪位置</h3>+<h4>新北市三重區忠孝橋下的餐車</h4>'
+            
+            let infoWindow = new google.maps.InfoWindow({
+                content: info
+            })
+            marker.addListener('click',function(){
+                infoWindow.open(map,marker);
+            })
+        }
+        
+    </script>
+
+
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4HukOr18oMeAO4pf8i7Nv8suWdlu7SkE&callback=initMap">
+    </script>
+
+    
+
+
+    
+
+        
+
+   
+
+    
+    
+
     
     
     
@@ -141,9 +190,18 @@
     
     <!-- 聯絡方式 -->
 
-    <footer>
-
-    </footer>
+    <div class = "footer" id="footer">
+        <footer>
+            <h6>電話: 02-12345678</h6>
+            <h6>營業時間: 每日 20:00-02:00</h6>
+            <a href="#nav">回到頂端</a>
+            
+            
+            
+    
+        </footer>
+    </div>
+    
     <!-- script 要放在最後! -->
     <script src="script.js"></script>
 </body>
